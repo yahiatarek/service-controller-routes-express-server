@@ -51,20 +51,39 @@ const getAllRecords = async (req, res, next) => {
     const {params: { recordId }} = req
     try {
       const Record = await recordService.getOneRecord(recordId);
-      res.send({ status: "record retrieved successfully", data: Record });
+      Record ? res.send({ status: "record retrieved successfully", data: Record }) : res.send({ status: "record doesn't exists"})
     } catch (error) {
       next(error);
     }
   };
 
-  const updateOneRecord = (req, res, next) => {
-    const updatedRecord = recordService.updateOneRecord();
-    res.send("Update an existing Record");
+  const updateOneRecord = async (req, res, next) => {
+    const {record, workout} = req.body;
+    const {recordId} = req.params;
+    try {
+      const recordUpdated = await recordService.updateOneRecord(recordId ,record, workout);
+      if(recordUpdated){
+        res.send({ status: "record updated successfully", data: recordUpdated });
+      }else{
+        res.send({ status: "record doesn't exist" });
+      }
+    } catch (error) {
+      next(error);
+    }
   };
   
-  const deleteOneRecord = (req, res, next) => {
-    recordService.deleteOneRecord();
-    res.send("Delete an existing Record");
+  const deleteOneRecord = async (req, res, next) => {
+    const {recordId} = req.params;
+    try {
+      const recordDeleted = await recordService.deleteOneRecord(recordId);
+      if(recordDeleted){
+        res.send({ status: "record deleted successfully", data: recordDeleted });
+      }else{
+        res.send({ status: "record doesn't exist" });
+      }
+    } catch (error) {
+      next(error);
+    }
   };
 
   module.exports = {

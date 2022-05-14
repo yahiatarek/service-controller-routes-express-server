@@ -15,7 +15,18 @@ const createNewRecord = (newRecord) => {
 const getOneRecord = (recordId)=>{
   return recordsFromDB.getOneRecord(recordId);
 }
+
+const updateOneRecord = (recordId, record, workout)=>{
+  return recordsFromDB.updateOneRecord(recordId, record, workout);
+}
+
+const deleteOneRecord = (recordId)=>{
+  return recordsFromDB.deleteOneRecord(recordId);
+}
+
 module.exports = {
+  deleteOneRecord,
+  updateOneRecord,
   getOneRecord,
   getRecordForWorkout,
   getAllRecords,

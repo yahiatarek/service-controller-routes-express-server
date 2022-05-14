@@ -52,7 +52,7 @@ router.get("/:workoutId", workoutControllerV1.getOneWorkout);
 
 router.post("/", workoutControllerV1.createNewWorkout);
 
-router.patch("/:workoutId", workoutControllerV1.updateOneWorkout);
+router.patch("/:workoutId", workoutControllerV1.updateOneRecord);
 
 router.delete("/:workoutId", workoutControllerV1.deleteOneWorkout);
 

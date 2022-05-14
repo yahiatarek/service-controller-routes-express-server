@@ -7,7 +7,13 @@ const options = {
     openapi: "3.0.0",
     info: { title: "Crossfit WOD API", version: "1.0.0" },
   },
-  apis: ["./src/apis-version-1/routes/workoutsRoutes.js", "./src/database/workouts.js", "./src/database/db-connect-and-schema.js"],
+  apis: [
+    "./src/apis-version-1/routes/workoutsRoutes.js",
+    "./src/database/workouts.js",
+    "./src/database/db-connect-and-schema.js",
+    "./src/apis-version-1/routes/recordsRoutes.js",
+    "./src/database/Record.js"
+  ],
 };
 
 // Docs in JSON format

@@ -12,7 +12,7 @@ const createNewWorkout = (newWorkout) => {
   return workoutsFromDB.createNewWorkout(newWorkout);
 }
 
-const updateOneWorkout = () => {
+const updateOneRecord = () => {
   return
 }
 
@@ -24,6 +24,6 @@ module.exports = {
   getAllWorkouts,
   getOneWorkout,
   createNewWorkout,
-  updateOneWorkout,
+  updateOneRecord,
   deleteOneWorkout,
 }

@@ -51,8 +51,8 @@ const workoutServiceV1 = require("../../services/services-v1/workoutsServicesV1"
     }
   };
   
-  const updateOneWorkout = (req, res) => {
-    const updatedWorkout = workoutServiceV1.updateOneWorkout();
+  const updateOneRecord = (req, res) => {
+    const updatedWorkout = workoutServiceV1.updateOneRecord();
     res.send("Update an existing workout");
   };
   
@@ -65,6 +65,6 @@ const workoutServiceV1 = require("../../services/services-v1/workoutsServicesV1"
     getAllWorkouts,
     getOneWorkout,
     createNewWorkout,
-    updateOneWorkout,
+    updateOneRecord,
     deleteOneWorkout,
   };
