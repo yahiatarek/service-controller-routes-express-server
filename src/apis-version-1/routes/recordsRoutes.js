@@ -73,7 +73,7 @@ router.get("/", recordController.getAllRecords);
  *                 data:
  *                   type: array 
  *                   items: 
- *                     $ref: "#/components/schemas/RecordWorkout"
+ *                     $ref: "#/components/schemas/Record"
  *       5XX:
  *         description: FAILED
  *         content:
@@ -118,7 +118,7 @@ router.get("/:workoutId/records", recordController.getRecordForWorkout);
  *                 data:
  *                   type: array 
  *                   items: 
- *                     $ref: "#/components/schemas/RecordId"
+ *                     $ref: "#/components/schemas/Record"
  *       5XX:
  *         description: FAILED
  *         content:
@@ -157,7 +157,7 @@ router.get("/:recordId", recordController.getOneRecord);
  *                 data:
  *                   type: array 
  *                   items: 
- *                     $ref: "#/components/schemas/createRecord"
+ *                     $ref: "#/components/schemas/Record"
  *       5XX:
  *         description: FAILED
  *         content:
@@ -202,7 +202,7 @@ router.post("/", recordController.createNewRecord);
  *                 data:
  *                   type: array 
  *                   items: 
- *                     $ref: "#/components/schemas/updateOneRecord"
+ *                     $ref: "#/components/schemas/Record"
  *       5XX:
  *         description: FAILED
  *         content:
@@ -247,7 +247,7 @@ router.patch("/:recordId", recordController.updateOneRecord);
  *                 data:
  *                   type: array 
  *                   items: 
- *                     $ref: "#/components/schemas/deleteOneRecord"
+ *                     $ref: "#/components/schemas/Record"
  *       5XX:
  *         description: FAILED
  *         content:
